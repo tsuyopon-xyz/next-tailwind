@@ -9,8 +9,8 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="px-4 desktop:p-0 max-w-screen-desktop mx-auto">
-        <div className="flex flex-wrap">
+      <main className="px-10 pt-10 max-w-screen-desktop mx-auto">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-4">
           <Card />
           <Card />
           <Card />
