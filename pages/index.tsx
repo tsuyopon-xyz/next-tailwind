@@ -10,7 +10,7 @@ export default function Home() {
       </Head>
 
       <main className="px-10 pt-10 max-w-screen-desktop mx-auto">
-        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-4">
+        <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-0">
           <Card />
           <Card />
           <Card />
