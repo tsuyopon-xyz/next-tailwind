@@ -1,22 +1,22 @@
 import Head from 'next/head';
-import AppBar from 'components/AppBar';
 import Card from 'components/Card';
 
 export default function Home() {
   return (
-    <div>
+    <>
       <Head>
         <title>Create Next App</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <AppBar />
-
-      <main>
-        <Card>card in main</Card>
+      <main className="px-4 desktop:p-0 max-w-screen-desktop mx-auto">
+        <div className="flex flex-wrap">
+          <Card />
+          <Card />
+          <Card />
+          <Card />
+        </div>
       </main>
-
-      <footer>Footer</footer>
-    </div>
+    </>
   );
 }

@@ -2,7 +2,11 @@ module.exports = {
   purge: [],
   darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {},
+    extend: {
+      transitionDuration: {
+        25: '25ms',
+      },
+    },
     screens: {
       tablet: '640px',
       // => @media (min-width: 640px) { ... }
@@ -15,7 +19,10 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      margin: ['first'],
+      zIndex: ['hover'],
+    },
   },
   plugins: [],
 };
