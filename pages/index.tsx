@@ -1,4 +1,6 @@
 import Head from 'next/head';
+import AppBar from 'components/AppBar';
+import Card from 'components/Card';
 
 export default function Home() {
   return (
@@ -8,9 +10,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <header>Header</header>
+      <AppBar />
 
-      <main>Main</main>
+      <main>
+        <Card>card in main</Card>
+      </main>
 
       <footer>Footer</footer>
     </div>
