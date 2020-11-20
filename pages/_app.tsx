@@ -1,6 +1,6 @@
 import 'tailwindcss/tailwind.css';
-import DeviceIndicatorBySize from 'components/development/DeviceIndicatorBySize';
-import AppBar from 'components/AppBar';
+import DeviceIndicatorBySize from 'src/components/development/DeviceIndicatorBySize';
+import AppBar from 'src/components/AppBar';
 
 function MyApp({ Component, pageProps }) {
   return (
