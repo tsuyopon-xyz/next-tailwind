@@ -1,9 +1,16 @@
 import React from 'react';
 
-const Card: React.FC = ({}) => {
+export interface Props {
+  backgroundColor?: string;
+}
+
+const Card: React.FC<Props> = ({ backgroundColor }) => {
   return (
     <div className="transition duration-100 ease-in-out transform hover:scale-110 hover:z-10 p-1 w-full">
-      <div className="p-6 flex space-x-4 bg-white rounded-lg shadow-lg">
+      <div
+        className="p-6 flex space-x-4 bg-white rounded-lg shadow-lg"
+        style={backgroundColor ? { backgroundColor } : {}}
+      >
         <div className="flex-shrink-0">
           <img
             src="https://source.unsplash.com/random"
