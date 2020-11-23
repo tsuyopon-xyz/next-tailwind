@@ -2,8 +2,11 @@
   "name": "next-tailwind",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": "12"
+  },
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev src/app/",
     "build": "next build",
     "start": "next start",
     "storybook": "start-storybook -p 6006",
