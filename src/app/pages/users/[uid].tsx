@@ -38,8 +38,12 @@ export default function UserShow() {
 
   return (
     <div className="container mx-auto bg-red-100">
-      <div>{user ? user.name : 'ロード中…'}</div>
-      <Button title="ボタン" />
+      {user && (
+        <div className="text-center">
+          <h1 className="text-3xl">{user.name}さんのページ</h1>
+          <div className="m-5">{user.name}さんに質問しよう！</div>
+        </div>
+      )}
     </div>
   );
 }
