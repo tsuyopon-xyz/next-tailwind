@@ -1,3 +1,4 @@
+import 'lib/firebase';
 import 'tailwindcss/tailwind.css';
 import DeviceIndicatorBySize from 'components/development/DeviceIndicatorBySize';
 import AppBar from 'components/AppBar';
