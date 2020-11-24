@@ -22,6 +22,8 @@ module.exports = {
     extend: {
       margin: ['first'],
       zIndex: ['hover'],
+      backgroundColor: ['active'],
+      opacity: ['disabled'],
     },
   },
   plugins: [],
