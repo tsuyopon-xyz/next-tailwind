@@ -1,8 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/router';
-import Link from 'next/link';
 import firebase from 'firebase/app';
 import { User } from 'models/User';
+import Button from 'components/Button';
 
 type Query = {
   uid: string;
@@ -37,11 +37,9 @@ export default function UserShow() {
   }, [query.uid]);
 
   return (
-    <div>
+    <div className="container mx-auto bg-red-100">
       <div>{user ? user.name : 'ロード中…'}</div>
-      <Link href="/">
-        <a>Go back</a>
-      </Link>
+      <Button title="ボタン" />
     </div>
   );
 }
