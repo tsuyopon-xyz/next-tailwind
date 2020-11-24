@@ -25,9 +25,10 @@ export function useAuthentication() {
 
     firebase.auth().onAuthStateChanged(function (firebaseUser) {
       if (firebaseUser) {
-        const loginUser = {
+        const loginUser: User = {
           uid: firebaseUser.uid,
           isAnonymous: firebaseUser.isAnonymous,
+          name: '',
         };
 
         setUser(loginUser);
