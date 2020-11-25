@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import firebase from 'firebase/app';
+import axios from 'axios';
 import { Answer } from 'models/Answer';
 import { Question } from 'models/Question';
 import { AnswerAPIResponse } from 'domain-types/AnswerAPITypes';
@@ -49,8 +50,8 @@ const AnswersShow: React.FC<AnswerAPIResponse> = ({ answer, question }) => {
 export const getServerSideProps: GetServerSideProps<AnswerAPIResponse> = async ({
   query,
 }: GetServerSidePropsContext) => {
-  const res = await fetch(process.env.API_URL + `/api/answers/${query.id}`);
-  const json: AnswerAPIResponse = await res.json();
+  const res = await axios.get(process.env.API_URL + `/api/answers/${query.id}`);
+  const json: AnswerAPIResponse = await res.data;
 
   return {
     props: {
