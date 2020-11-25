@@ -1,3 +1,4 @@
+import Head from 'next/head';
 import { GetServerSideProps, GetServerSidePropsContext } from 'next';
 import firebase from 'firebase/app';
 import { Answer } from 'models/Answer';
@@ -21,15 +22,26 @@ const AnswersShow: React.FC<AnswerAPIResponse> = ({ answer, question }) => {
       question.createdAt._nanoseconds
     ),
   };
+  const description = getDescription(answerUsingFirestoreTimestamp);
 
   return (
-    <main className="px-10 pt-10 max-w-screen-desktop mx-auto">
-      <h2>質問内容</h2>
-      <QuestionCard question={questionUsingFirestoreTimestamp} />
+    <>
+      <Head>
+        <meta name="description" key="description" content={description} />
+        <meta
+          property="og:description"
+          key="ogDescription"
+          content={description}
+        />
+      </Head>
+      <main className="px-10 pt-10 max-w-screen-desktop mx-auto">
+        <h2>質問内容</h2>
+        <QuestionCard question={questionUsingFirestoreTimestamp} />
 
-      <h2>回答内容</h2>
-      <AnswerCard answer={answerUsingFirestoreTimestamp} />
-    </main>
+        <h2>回答内容</h2>
+        <AnswerCard answer={answerUsingFirestoreTimestamp} />
+      </main>
+    </>
   );
 };
 
@@ -47,3 +59,11 @@ export const getServerSideProps: GetServerSideProps<AnswerAPIResponse> = async (
 };
 
 export default AnswersShow;
+
+function getDescription(answer: Answer) {
+  const body = answer.body.trim().replace(/[ \r\n]/g, '');
+  if (body.length < 140) {
+    return body;
+  }
+  return body.substring(0, 140) + '...';
+}
