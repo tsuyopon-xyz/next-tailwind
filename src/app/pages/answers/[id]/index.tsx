@@ -35,6 +35,7 @@ const AnswersShow: React.FC<AnswerAPIResponse> = ({ answer, question }) => {
         />
       </Head>
       <main className="px-10 pt-10 max-w-screen-desktop mx-auto">
+        <h1>回答ページ</h1>
         <h2>質問内容</h2>
         <QuestionCard question={questionUsingFirestoreTimestamp} />
 
@@ -48,7 +49,7 @@ const AnswersShow: React.FC<AnswerAPIResponse> = ({ answer, question }) => {
 export const getServerSideProps: GetServerSideProps<AnswerAPIResponse> = async ({
   query,
 }: GetServerSidePropsContext) => {
-  const res = await fetch(`/api/answers/${query.id}`);
+  const res = await fetch(process.env.API_URL + `/api/answers/${query.id}`);
   const json: AnswerAPIResponse = await res.json();
 
   return {

@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import firebase from 'firebase/app';
@@ -85,7 +86,11 @@ export default function QuestionsShow() {
           {answer ? (
             <>
               <h2>回答内容</h2>
-              <AnswerCard answer={answer} />
+              <Link href={`/answers/${answer.id}`}>
+                <a>
+                  <AnswerCard answer={answer} />
+                </a>
+              </Link>
             </>
           ) : (
             <AnswerForm
