@@ -41,6 +41,7 @@ export default function QuestionsShow() {
 
   async function loadAnswer() {
     if (!question.isReplied) {
+      setIsLoadedAnswer(true);
       return;
     }
 
@@ -63,13 +64,17 @@ export default function QuestionsShow() {
   }
 
   useEffect(() => {
+    if (!user) {
+      return;
+    }
+
     if (!question) {
       loadQuestion();
     }
     if (question && !isLoadedAnswer) {
       loadAnswer();
     }
-  }, [query.id, question, answer, isLoadedAnswer]);
+  }, [user, query.id, question, answer, isLoadedAnswer]);
 
   return (
     <main className="px-10 pt-10 max-w-screen-desktop mx-auto">
