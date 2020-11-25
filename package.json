@@ -17,6 +17,7 @@
     "bootstrap": "^5.0.0-alpha3",
     "dayjs": "^1.9.6",
     "firebase": "^8.1.1",
+    "firebase-admin": "^9.4.1",
     "next": "10.0.2",
     "postcss": "^7.0.35",
     "react": "17.0.1",

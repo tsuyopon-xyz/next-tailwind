@@ -9,5 +9,4 @@ export interface AnswerRequest {
 
 export interface Answer extends AnswerRequest {
   id: string;
-  createdAt: firebase.firestore.Timestamp;
 }
