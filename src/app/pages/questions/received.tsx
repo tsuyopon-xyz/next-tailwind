@@ -1,10 +1,5 @@
-import {
-  useCallback,
-  useState,
-  useEffect,
-  useRef,
-  SetStateAction,
-} from 'react';
+import { useState, useEffect, useRef, SetStateAction } from 'react';
+import Link from 'next/link';
 import firebase from 'firebase/app';
 import { User } from 'models/User';
 import { Question } from 'models/Question';
@@ -80,7 +75,11 @@ export default function QuestionsReceived() {
       >
         {/* <div className="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-0"> */}
         {questions.map((question) => (
-          <QuestionCard key={question.id} question={question} />
+          <Link key={question.id} href={question.id}>
+            <a>
+              <QuestionCard question={question} isHeightScreen={true} />
+            </a>
+          </Link>
         ))}
         {/* </div> */}
       </main>

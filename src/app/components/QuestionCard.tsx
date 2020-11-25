@@ -4,12 +4,17 @@ import { Question } from 'models/Question';
 
 interface Props {
   question: Question;
+  isHeightScreen?: boolean;
 }
 
-const Card: React.FC<Props> = ({ question }) => {
+const Card: React.FC<Props> = ({ question, isHeightScreen = false }) => {
   return (
     <div className="transition duration-100 ease-in-out transform p-1 w-full">
-      <div className="p-6 space-x-4 bg-white rounded-lg shadow-lg h-screen">
+      <div
+        className={`p-6 space-x-4 bg-white rounded-lg shadow-lg ${
+          isHeightScreen && 'h-screen'
+        }`}
+      >
         <div>
           <p className="text-gray-500">{question.body}</p>
           <small>

@@ -8,6 +8,11 @@ export interface QuestionRequest {
   createdAt: firebase.firestore.FieldValue;
 }
 
+export interface QuestionRequestForUpdate {
+  body?: string;
+  isReplied?: boolean;
+}
+
 export interface Question extends QuestionRequest {
   id: string;
   createdAt: firebase.firestore.Timestamp;
