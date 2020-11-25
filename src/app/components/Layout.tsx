@@ -4,7 +4,7 @@ import { ToastContainer } from 'react-toastify';
 
 export default function Layout({ children }) {
   return (
-    <div className="bg-gray-300 h-screen">
+    <div className="bg-gray-300 min-h-screen">
       {process.env.NODE_ENV === 'development' ? (
         <DeviceIndicatorBySize />
       ) : null}

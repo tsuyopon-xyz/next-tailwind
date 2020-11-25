@@ -2,6 +2,7 @@ import { FormEvent, useEffect, useState } from 'react';
 import firebase from 'firebase/app';
 import { toast } from 'react-toastify';
 import { User } from 'models/User';
+import { QuestionRequest } from 'models/Question';
 import Button from 'components/Button';
 
 type Props = {
@@ -27,13 +28,15 @@ const QuestionForm: React.FC<Props> = ({ user }) => {
 
     setIsSending(true);
 
-    await firebase.firestore().collection('questions').add({
+    const requestData: QuestionRequest = {
       senderUid: firebase.auth().currentUser.uid,
       receiverUid: user.uid,
       body,
       isReplied: false,
       createdAt: firebase.firestore.FieldValue.serverTimestamp(),
-    });
+    };
+
+    await firebase.firestore().collection('questions').add(requestData);
 
     setIsSending(false);
 

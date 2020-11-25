@@ -15,9 +15,15 @@ export default function Home() {
 
       <p>
         {user?.uid ? (
-          <Link href={`/users/${user.uid}`}>
-            <a>Go to User detail page</a>
-          </Link>
+          <>
+            <Link href={`/users/${user.uid}`}>
+              <a>Go to "User detail" page</a>
+            </Link>
+            {' / '}
+            <Link href="/questions/received">
+              <a>Go to "Questions received" page</a>
+            </Link>
+          </>
         ) : (
           '未ログイン'
         )}
