@@ -3,7 +3,7 @@ import { Question } from 'models/Question';
 
 type Override<T1, T2> = Omit<T1, keyof T2> & T2;
 
-type AnswerFormatForAPI = Override<
+export type AnswerFormatForAPI = Override<
   Answer,
   {
     createdAt: {
@@ -13,7 +13,7 @@ type AnswerFormatForAPI = Override<
   }
 >;
 
-type QuestionFormatForAPI = Override<
+export type QuestionFormatForAPI = Override<
   Question,
   {
     createdAt: {
