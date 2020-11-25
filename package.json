@@ -7,8 +7,8 @@
   },
   "scripts": {
     "dev": "next dev src/app/",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build src/app/",
+    "start": "next start src/app/",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
