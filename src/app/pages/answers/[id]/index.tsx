@@ -35,6 +35,7 @@ const AnswersShow: React.FC<AnswerAPIResponse> = ({ answer, question }) => {
         />
       </Head>
       <main className="px-10 pt-10 max-w-screen-desktop mx-auto">
+        <h1>回答ページ</h1>
         <h2>質問内容</h2>
         <QuestionCard question={questionUsingFirestoreTimestamp} />
 
