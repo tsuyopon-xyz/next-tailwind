@@ -20,7 +20,6 @@ export default function QuestionsReceived() {
 
   const onScroll = async (_event: Event) => {
     if (isPaginationFinished) {
-      console.log(questions, 'finished pagination!');
       return;
     }
 
@@ -56,7 +55,6 @@ export default function QuestionsReceived() {
 
     // 初回読み込み時のみ処理
     if (questions.length === 0 && !isFetching) {
-      console.log('first load');
       loadQuestions(user, setQuestions, setIsPaginationFinished);
     }
 
@@ -69,6 +67,7 @@ export default function QuestionsReceived() {
     // scrollContainerRef.current,
     isPaginationFinished,
     isFetching,
+    user,
   ]);
 
   return (
