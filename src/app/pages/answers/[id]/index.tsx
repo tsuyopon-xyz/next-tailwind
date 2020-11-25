@@ -48,7 +48,7 @@ const AnswersShow: React.FC<AnswerAPIResponse> = ({ answer, question }) => {
 export const getServerSideProps: GetServerSideProps<AnswerAPIResponse> = async ({
   query,
 }: GetServerSidePropsContext) => {
-  const res = await fetch(process.env.API_URL + `/api/answers/${query.id}`);
+  const res = await fetch(`/api/answers/${query.id}`);
   const json: AnswerAPIResponse = await res.json();
 
   return {
