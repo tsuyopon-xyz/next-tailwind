@@ -81,7 +81,7 @@ export default function QuestionsShow() {
       {question && user && isLoadedAnswer ? (
         <>
           <h2>質問内容</h2>
-          <QuestionCard key={question.id} question={question} />
+          <QuestionCard question={question} />
           {answer ? (
             <>
               <h2>回答内容</h2>
