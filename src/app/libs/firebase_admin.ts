@@ -1,8 +1,10 @@
 import * as admin from 'firebase-admin';
 
 if (admin.apps.length == 0) {
+  const combinedGcpCredentialInBase64 =
+    process.env.GCP_CREDENTIAL_1 + process.env.GCP_CREDENTIAL_2;
   const credential = JSON.parse(
-    Buffer.from(process.env.GCP_CREDENTIAL, 'base64').toString()
+    Buffer.from(combinedGcpCredentialInBase64, 'base64').toString()
   );
 
   admin.initializeApp({
